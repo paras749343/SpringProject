@@ -1,0 +1,81 @@
+package com.learn.e;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+
+@Controller
+public class AppController {
+	
+	@Autowired
+	private UserRepository userRepo;
+	
+	@Autowired
+	private FeedbackRepository feedbackRepo;
+	
+	@GetMapping("")
+	public String viewHomePage() {
+		return "index";
+	}
+	
+	@GetMapping("/register")
+	public String registrationForm( Model model ) {
+		model.addAttribute("user", new User());
+		return "signup_form";
+	}
+	
+	@PostMapping("/process_register")
+	public String processRegisteration(User user) {
+		BCryptPasswordEncoder encoder =  new BCryptPasswordEncoder();
+		String encodedPassword = encoder.encode(user.getPassword());
+		user.setPassword(encodedPassword);
+		userRepo.save(user);
+		
+		return "register_success";
+	}
+	
+	@GetMapping("/home")
+	public String viewAllUsers() {
+		return "home";
+	}
+	
+	@GetMapping("admin/user_list")
+	public String viewUsersList(Model model){
+		List<User> listUsers = userRepo.findAll();
+		model.addAttribute("listUsers", listUsers);
+		return "users";
+	}
+	
+	@GetMapping("admin/dashboard")
+	public String viewAdminDashboard() {
+		return "dashboard";
+	}
+	
+	@GetMapping("/home/feedback")
+	public String feedbackForm( Model model ) {
+		model.addAttribute("feedback", new Feedback());
+		return "feedback_form";
+	}
+	
+	@PostMapping("/process_feedback")
+	public String processFeedback(@AuthenticationPrincipal CustomUserDetails user , Feedback feedback) {
+		feedback.setUser_id(user.getUser_Id());
+		feedbackRepo.save(feedback);
+		return "home";
+	}
+	
+	@GetMapping("admin/feedback_list")
+	public String viewFeedbackList(Model model){
+		List<Feedback> listFeedbacks = feedbackRepo.findAll();
+		model.addAttribute("listFeedbacks", listFeedbacks);
+		return "feedbacks";
+	}
+	
+	
+}

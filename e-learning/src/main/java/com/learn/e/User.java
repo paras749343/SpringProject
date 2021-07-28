@@ -29,8 +29,8 @@ public class User {
 	@Column(nullable =  false, length = 100)
 	private String phone_number;
 	
-	@Column(nullable =  true, length = 100)
-	private String profile_photo;
+	@Column(nullable =  true)
+	private Long course_id;
 	
 	@Column(nullable =  false, length = 100)
 	private String registration_date;
@@ -71,17 +71,18 @@ public class User {
 	public void setPhone_number(String phone_number) {
 		this.phone_number = phone_number;
 	}
-	public String getProfile_photo() {
-		return profile_photo;
-	}
-	public void setProfile_photo(String profile_photo) {
-		this.profile_photo = profile_photo;
-	}
+	
 	public String getRegistration_date() {
 		return registration_date;
 	}
 	public void setRegistration_date(String registration_date) {
 		this.registration_date = registration_date;
+	}
+	public Long getCourse_id() {
+		return course_id;
+	}
+	public void setCourse_id(Long course_id) {
+		this.course_id = course_id;
 	}
 	
 

@@ -2,4 +2,8 @@
 <typeInfoHistroy>
 <typeInfo handle="=e-learning/C:\/Users\/User\/.m2\/repository\/org\/springframework\/security\/spring-security-core\/5.5.1\/spring-security-core-5.5.1.jar&lt;org.springframework.security.core.userdetails(UserDetails.class[UserDetails" modifiers="1537" timestamp="1627363819046"/>
 <typeInfo handle="=e-learning/C:\/Users\/User\/.m2\/repository\/org\/springframework\/security\/spring-security-core\/5.5.1\/spring-security-core-5.5.1.jar&lt;org.springframework.security.core.userdetails(UserDetailsService.class[UserDetailsService" modifiers="1537" timestamp="1627363819046"/>
+<typeInfo handle="=e-learning/C:\/Users\/User\/.m2\/repository\/org\/springframework\/boot\/spring-boot-autoconfigure\/2.5.3\/spring-boot-autoconfigure-2.5.3.jar&lt;org.springframework.boot.autoconfigure.data.jpa(JpaRepositoriesAutoConfiguration.class[JpaRepositoriesAutoConfiguration" modifiers="33" timestamp="1627155844793"/>
+<typeInfo handle="=e-learning/C:\/Users\/User\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.5.3\/spring-data-jpa-2.5.3.jar&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1627363803787"/>
+<typeInfo handle="=e-learning/C:\/Users\/User\/.m2\/repository\/org\/springframework\/data\/spring-data-commons\/2.5.3\/spring-data-commons-2.5.3.jar&lt;org.springframework.data.repository(CrudRepository.class[CrudRepository" modifiers="1537" timestamp="1627363804815"/>
+<typeInfo handle="=e-learning/C:\/Users\/User\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.5.3\/spring-data-jpa-2.5.3.jar&lt;org.springframework.data.jpa.repository.support(CrudMethodMetadata.class[CrudMethodMetadata" modifiers="1537" timestamp="1627363803787"/>
 </typeInfoHistroy>

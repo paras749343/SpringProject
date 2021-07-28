@@ -1,0 +1,28 @@
+package com.learn.e;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@Table(name="courses")
+public class Course {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable =  false, unique = true)
+	private Long course_id;
+	
+	@Column(nullable =  false, length = 100)
+	private String course_name;
+	
+	@Column(nullable =  false, length = 100)
+	private String course_resource;
+	
+	@Column(nullable =  false, length = 100)
+	private String course_fee;
+	
+	@Column(nullable =  false, length = 100)
+	private String course_desc;
+
+}

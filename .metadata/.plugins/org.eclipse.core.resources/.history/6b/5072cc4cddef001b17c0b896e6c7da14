@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Users List - Admin Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container text-center">
+		<div>
+			<h1>List of All Users</h1>
+		</div>
+		<div>
+		<form 
+				th:action="@{/enroll_course}" 
+				method="post"
+				th:object="${user}"	
+				>
+			<table class="table table-stripped table-bordered" >
+				<thead class="thead-dark">
+					<tr>
+						<th>Course Name</th>
+						<th>Course Resource</th>
+						<th>Course Price</th>
+						<th>Course Description</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="course: ${listCourses}">
+						<td th:text="${course.course_name}">Course Name</td>
+						<td th:text="${course.course_resource}">Course Resource</td>
+						<td th:text="${course.course_fee}">Course Price</td>
+						<td th:text="${course.course_desc}">Course Description</td>
+						<td> <input type="radio" th:field="*{course_id}" th:value="${course.course_id}" /></td>
+						</tr>
+				</tbody>
+			</table>
+			
+			</form>
+		</div>
+	</div>
+</body>
+</html>

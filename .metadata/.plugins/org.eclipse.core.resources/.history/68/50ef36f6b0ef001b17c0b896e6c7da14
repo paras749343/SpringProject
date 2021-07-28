@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Admin Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container text-center">
+		<div>
+			<h1>Admin Dashboard</h1>
+		</div>
+		<div>
+			<h4><a th:href="@{/user_list}"> View all users</a></h4>
+			<h4><a th:href="@{/feedback_list}"> View Feedbacks!</a></h4>
+		</div>
+	</div>
+</body>
+</html>

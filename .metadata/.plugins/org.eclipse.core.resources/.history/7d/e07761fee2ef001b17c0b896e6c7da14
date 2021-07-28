@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Feedback List - Admin Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container text-center">
+		<div>
+			<h1>List of All Users</h1>
+		</div>
+		<div>
+			<table class="table table-stripped table-bordered" >
+				<thead class="thead-dark">
+					<tr>
+						<th>Feedback ID</th>
+						<th>Name</th>
+						<th>Email-ID</th>
+						<th>User ID</th>
+						<th>Feedback</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="feedback: ${listFeedbacks}">
+						<td th:text="${feedback.feedback_id}">Feedback ID</td>
+						<td th:text="${feedback.name}">Name</td>
+						<td th:text="${feedback.email}">Email-ID</td>
+						<td th:text="${feedback.user_id}">User ID</td>
+						<td th:text="${feedback.feedback_data}">Feedback</td>
+						</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

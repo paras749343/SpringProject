@@ -8,10 +8,13 @@
 <body>
 	<div class="container text-center">
 		<div>
-			<h1>Welcome User!</h1>
+			<h1>Welcome [[${#request.userPrincipal.principal.name}]]!</h1>
 		</div>
 		<div>
 			<h3><a th:href="@{/logout}">Log out!</a></h3>
+			<h3><a th:href="@{/home/course_enroll}">Enroll Into a Course</a></h3>
+			<h3><a th:href="@{/home/feedback}">Give Feedback</a></h3>
+			
 		</div>
 	</div>
 </body>
