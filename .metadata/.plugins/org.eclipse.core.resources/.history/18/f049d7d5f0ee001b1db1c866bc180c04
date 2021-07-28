@@ -1,0 +1,10 @@
+package com.learn.e;
+
+public class PasswordEncoder {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,8 @@
+package com.learn.e;
+
+import org.springframework.security.config.annotation.web.WebSecurityConfigurer;
+import org.springframework.security.config.annotation.web.WebSecurityConfigureAdapter;
+
+public class WebSecurityConfig implements WebSecurityConfigurer<T> {
+
+}
